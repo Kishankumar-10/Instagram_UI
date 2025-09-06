@@ -11,286 +11,693 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.camera_alt_outlined, size: 30),
-        actions: [
-          Container(
-            padding: EdgeInsets.only(left: 10, right: 20),
-            child: Row(
-              children: [
-                Image.asset("assets/images/heart.png", height: 40, width: 30),
-
-                Image.asset(
-                  "assets/images/messanger.png",
-                  height: 40,
-                  width: 40,
-                ),
-
-                Image.asset("assets/images/post.png", height: 40, width: 30),
-              ],
-            ),
-          ),
-        ],
-
-        title: Center(
-          child: Text(
-            "Instagram",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 45,
-              fontFamily: "Billabong",
-            ),
-          ),
-        ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8, top: 15),
-            child: Text(
-              "Stories",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              floating: true,
+              snap: true,
+              leading: Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: Icon(Icons.camera_alt_outlined, size: 30),
               ),
-            ),
-          ),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 5, right: 5),
-            child: Row(
-              children: [
+              actions: [
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Stack(
+                  padding: EdgeInsets.only(left: 10, right: 20, top: 25),
+                  child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 1),
-                        child: Image.asset(
-                          "assets/images/Avatar.png",
-                          height: 80,
-                          width: 80,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        "assets/images/heart.png",
+                        height: 40,
+                        width: 30,
                       ),
-
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white, width: 1.5),
-                          ),
-                          child: Icon(Icons.add, color: Colors.white, size: 25),
-                        ),
+                      Image.asset(
+                        "assets/images/messanger.png",
+                        height: 40,
+                        width: 40,
+                      ),
+                      Image.asset(
+                        "assets/images/post.png",
+                        height: 40,
+                        width: 30,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 15),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.red, width: 3),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Image.asset(
-                    "assets/images/Avatar1.png",
-                    fit: BoxFit.cover,
-                    height: 80,
-                    width: 80,
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.red, width: 3),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Image.asset(
-                    "assets/images/Avatar2.png",
-                    fit: BoxFit.cover,
-                    height: 80,
-                    width: 80,
-                  ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.red, width: 3),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Image.asset(
-                    "assets/images/Avatar3.png",
-                    fit: BoxFit.cover,
-                    height: 80,
-                    width: 80,
-                  ),
-                ),
               ],
-            ),
-          ),
-          SizedBox(height: 7),
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: Text(
-              "Your Stories",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              title: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: Text(
+                    "Instagram",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 45,
+                      fontFamily: "Billabong",
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: Row(
-              children: [
-                Image.asset(
-                  "assets/images/Avatar.png",
-                  height: 45,
-                  width: 45,
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(width: 23),
-                Text(
-                  "Ruffles",
+          ];
+        },
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8, top: 20),
+                child: Text(
+                  "Stories",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'poppins',
-                  ),
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Image.asset(
-                    "assets/images/dots.png",
-                    height: 40,
-                    width: 40,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 10),
-          Image.asset(
-            "assets/images/pic.png",
-            height: 300,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(height: 15),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 12),
-            child: Row(
-              children: [
-                Image.asset(
-                  "assets/images/redheart.png",
-                  height: 30,
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(width: 10),
-                Image.asset(
-                  "assets/images/comment.png",
-                  height: 25,
-                  width: 25,
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(width: 10),
-                Image.asset(
-                  "assets/images/send.png",
-                  height: 25,
-                  width: 25,
-                  fit: BoxFit.cover,
-                ),
-                Spacer(),
-                Image.asset("assets/images/Carousel Dots.png"),
-                Spacer(),
-                Image.asset(
-                  "assets/images/bookmarks.png",
-                  height: 28,
-                  width: 28,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              children: [
-                Text(
-                  "10K Likes",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              children: [
-                Image.asset("assets/images/Avatar.png", height: 20, width: 20),
-                SizedBox(width: 10),
-                Text("Liked by", style: TextStyle(fontSize: 15)),
-                SizedBox(width: 5),
-                Text(
-                  "Kishan",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 5),
-                Text("and", style: TextStyle(fontSize: 15)),
-                SizedBox(width: 5),
-                Text(
-                  "75K others",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              children: [
-                Text(
-                  "Ruffles",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 5),
-                Text(
-                  "#Pookie #pet",
-                  style: TextStyle(
-                    fontSize: 15,
+                    color: Colors.black,
+                    fontSize: 20,
                     fontWeight: FontWeight.w500,
-                    color: Colors.blue,
                   ),
                 ),
-              ],
-            ),
-          ),
-          SizedBox(height: 3),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              children: [
-                Text(
-                  "View all 1145 comments",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 5, right: 5),
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 1),
+                            child: Image.asset(
+                              "assets/images/Avatar.png",
+                              height: 80,
+                              width: 80,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 1.5,
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 25,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.red, width: 3),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Image.asset(
+                        "assets/images/Avatar1.png",
+                        fit: BoxFit.cover,
+                        height: 80,
+                        width: 80,
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.red, width: 3),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Image.asset(
+                        "assets/images/Avatar2.png",
+                        fit: BoxFit.cover,
+                        height: 80,
+                        width: 80,
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.red, width: 3),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Image.asset(
+                        "assets/images/Avatar3.png",
+                        fit: BoxFit.cover,
+                        height: 80,
+                        width: 80,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
+              SizedBox(height: 7),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Text(
+                  "Your Stories",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar.png",
+                      height: 42,
+                      width: 42,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 23),
+                    Text(
+                      "Ruffles",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'poppins',
+                      ),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                        "assets/images/dots.png",
+                        height: 40,
+                        width: 40,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Image.asset(
+                "assets/images/post 1.png",
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 12),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/redheart.png",
+                      height: 30,
+                      width: 35,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/comment.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/send.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    Spacer(),
+                    Image.asset("assets/images/Carousel Dots.png"),
+                    Spacer(),
+                    Image.asset(
+                      "assets/images/bookmarks.png",
+                      height: 28,
+                      width: 28,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "10K Likes",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar.png",
+                      height: 20,
+                      width: 20,
+                    ),
+                    SizedBox(width: 10),
+                    Text("Liked by", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "Kishan",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text("and", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "75K others",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "Ruffles",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      "#Pookie #pet",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 3),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "View all 1145 comments",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar3.png",
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 23),
+                    Text(
+                      "Mario",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'poppins',
+                      ),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                        "assets/images/dots.png",
+                        height: 40,
+                        width: 40,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Image.asset(
+                "assets/images/Post 2.png",
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 12),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/redheart.png",
+                      height: 30,
+                      width: 35,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/comment.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/send.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    Spacer(),
+                    Image.asset("assets/images/Carousel Dots.png"),
+                    Spacer(),
+                    Image.asset(
+                      "assets/images/bookmarks.png",
+                      height: 28,
+                      width: 28,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "14K Likes",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar3.png",
+                      height: 20,
+                      width: 20,
+                    ),
+                    SizedBox(width: 10),
+                    Text("Liked by", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "Martin",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text("and", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "43K others",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "Mario",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      "#beach #nature",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 3),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "View all 1253 comments",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar2.png",
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 23),
+                    Text(
+                      "Alifia",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'poppins',
+                      ),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                        "assets/images/dots.png",
+                        height: 40,
+                        width: 40,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Image.asset(
+                "assets/images/Post 3.png",
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 12),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/redheart.png",
+                      height: 30,
+                      width: 35,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/comment.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 10),
+                    Image.asset(
+                      "assets/images/send.png",
+                      height: 25,
+                      width: 25,
+                      fit: BoxFit.cover,
+                    ),
+                    Spacer(),
+                    Image.asset("assets/images/Carousel Dots.png"),
+                    Spacer(),
+                    Image.asset(
+                      "assets/images/bookmarks.png",
+                      height: 28,
+                      width: 28,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "15K Likes",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/Avatar2.png",
+                      height: 20,
+                      width: 20,
+                    ),
+                    SizedBox(width: 10),
+                    Text("Liked by", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "juliet",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text("and", style: TextStyle(fontSize: 15)),
+                    SizedBox(width: 5),
+                    Text(
+                      "37K others",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "Alifia",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      "#Random Capture #Drizzling",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 3),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "View all 1016 comments",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled, color: Colors.black, size: 30),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_outlined, color: Colors.black, size: 30),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/images/reels.png", height: 30, width: 30),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/notification.png",
+              height: 30,
+              width: 30,
             ),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              "assets/images/Avatar.png",
+              height: 30,
+              width: 30,
+            ),
+            label: "",
           ),
         ],
       ),
