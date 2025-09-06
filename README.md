@@ -18,7 +18,9 @@
 
 ## 📸 Screenshots
 
-![Home Screen](screenshots/Screenshot_1.png) ![Stories Section](screenshots/Screenshot_2.png) ![Posts Feed](screenshots/Screenshot_3.png)
+| Home Screen | Stories Section | Posts Feed |
+|-------------|-----------------|------------|
+| <img src="screenshots/Screenshot_1.png" width="250"> | <img src="screenshots/Screenshot_2.png" width="250"> | <img src="screenshots/Screenshot_3.png" width="250"> |
 
 ## 🚀 Getting Started
 
